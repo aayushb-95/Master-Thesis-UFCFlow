@@ -1,4 +1,5 @@
 
+
 ## UFCFlow - Optical Flow Estimation Using Unsupervised Deep Learning
 
  - This repository contains the implementation of my Master Thesis titled: **UFCFlow - Optical Flow Estimation Using Unsupervised Deep Learning**.
@@ -20,9 +21,6 @@
  - **Refinement Network**
 ![enter image description here](https://github.com/aayushb-95/Master-Thesis-UFCFlow/blob/main/UFCFlow%20Architecture/UFCFlow-Refinement.png)
 
-## Results
-![enter image description here](https://github.com/aayushb-95/Master-Thesis-UFCFlow/blob/main/UFCFlow%20Results/Result-Table.PNG)
- 
 ## Datasets
 - **Flying Chairs [1]**
   - The UFCFlow model is trained using 22,234 traning image pairs and tested using 638 testing image pairs.
@@ -36,7 +34,12 @@
   - Extract the folder and use the images from the final folder and .flo files from the flow folder.
 
 
-
+## Results
+- The UFCFlow model is trained on the Flying Chairs dataset and tested on the test split of the Flying Chairs dataset and on the whole MPI Sintel dataset. For testing the UFCFlow model, all image frames from both the Clean and Final render category is used.
+- The table below presents the test result of the UFCFlow model on the MPI Sintel dataset.
+- The UFCFlow model is the second best model among all the models present in the table under the unsupervised training methodology. 
+![Test accuracy of the UFCFlow model on the Flying Chairs and the MPI Sintel dataset](https://github.com/aayushb-95/Master-Thesis-UFCFlow/blob/main/UFCFlow%20Results/Result-Table.PNG)
+ 
 ## Code Execution
 
 ### Dataframe Creation
@@ -49,14 +52,21 @@
 
 
 ### UFCFlow Model Execution on Google Colab environment
-- Upload the dataset on Google Drive.
+- Upload the datasets on Google Drive.
 - Upload the dataframes on Google Drive
-- Upload the jupyter notebooks: **UFCFlow_Sintel_clean_FOS**, and **UFCFlow_Sintel_final_FOS**  on google drive and open with colab notebooks Environment.
+- Upload the jupyter notebook: **UFCFlow_Sintel_final_FOS**  on google drive and open with colab notebooks environment.
 - Link Google Drive Storage with Colab Notebooks using the command:  
 ``` from google.colab import drive ```
 ``` drive.mount('/content/gdrive') ```
  - Execute each cell one by one to load the dataframes and the weights of the UFCFlow model
  - The **UFCFlow_FC_FOSwithSSIM**, **UFCFlow_FC_SOSwithSSIM** notebooks cannot be executed on the Google Colab environment since the Google Colab does not allow to extract 30GB of the Flying Chairs dataset completely. For this reason the jupter notebooks of the Flying Chairs dataset has to be executed on the local machine. 
+ - However, for 1/3rd of the original amount i.e. approx. 10GB after compression, the Flying Chairs dataset can be uploaded on Google drive and the Google Colab environment can be used for training the UFCFlow model.
+
+#### Note
+- A .py file format of the notebooks can also be genrerated from the Jupyter console to execute on the Pycharm IDE but it is recommended to use jupyter notebook environment for easier and cell-by-cell execution.
+- **UFCFlow_Sintel_final_FOS** -- Trained using photometric loss and first-order smoothness loss on the Final render category
+- **UFCFlow_FC_FOSwithSSIM** -- Trained using photometric loss, SSIM loss, and first-order smoothness loss
+- **UFCFlow_FC_SOSwithSSIM** -- Trained using photometric loss, SSIM loss, and second-order smoothness loss
 
 ### Making predictions
 - Enter train dataframes path in variable **df**.
@@ -67,7 +77,7 @@
 -  All other instructions are commented in the notebook.
 
 ## Installation
-These installation steps are for executing the UFCFlow model on the local system
+These installation steps are for executing the UFCFlow model on the local system:
 - Install TensorFlow GPU - ``` pip3 install tensorflow-gpu==2.1.0```
 - Install TensorFlow addons - ``` pip3 install tensorflow-addons==0.8.2```
 - Install JupyterLab - ``` pip3 install jupyterlab```
@@ -75,6 +85,7 @@ These installation steps are for executing the UFCFlow model on the local system
 - In addition to installing the above mentioned packages, also install the required python packages such as pandas, numpy given in the notebook for successful execution of the file.
 - Load the jupyter notebooks and make predictions.
 - The steps for making predictions on the local system are same as above.
+
 
 ## References
 
