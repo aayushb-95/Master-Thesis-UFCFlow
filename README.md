@@ -67,7 +67,7 @@
 -  All other instructions are commented in the notebook.
 
 ## Installation
-These installation steps are for executing the Mutiflow model on the local system
+These installation steps are for executing the UFCFlow model on the local system
 - Install TensorFlow GPU - ``` pip3 install tensorflow-gpu==2.1.0```
 - Install TensorFlow addons - ``` pip3 install tensorflow-addons==0.8.2```
 - Install JupyterLab - ``` pip3 install jupyterlab```
