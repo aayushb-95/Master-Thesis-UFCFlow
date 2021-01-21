@@ -13,11 +13,11 @@
  - The UFCFlow model is inspired from the FlowNetC [1] model with modifications to the underlying architecture and adapted for the unsupervised traning methodology .
  
 ## UFCFlow Model Architecture
-- Overview diagram of the UFCFlow network for unsupervised optical flow estimation
+- **Overview diagram of the UFCFlow network for unsupervised optical flow estimation**
 ![enter image description here](https://github.com/aayushb-95/Master-Thesis-UFCFlow/blob/main/UFCFlow%20Architecture/UFCFlow.png)
- - Contractive Network
+ - **Contractive Network**
  ![enter image description here](https://github.com/aayushb-95/Master-Thesis-UFCFlow/blob/main/UFCFlow%20Architecture/UFCFlow-Contractive.png)
- - Refinement Network
+ - **Refinement Network**
 ![enter image description here](https://github.com/aayushb-95/Master-Thesis-UFCFlow/blob/main/UFCFlow%20Architecture/UFCFlow-Refinement.png)
 
 ## Results
